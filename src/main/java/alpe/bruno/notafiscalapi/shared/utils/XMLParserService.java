@@ -24,7 +24,7 @@ import java.util.UUID;
 @Service
 public class XMLParserService {
 
-    public NotaFiscal parseXML(MultipartFile file) throws Exception {
+    public static NotaFiscal parseXML(MultipartFile file) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(file.getInputStream());
@@ -34,7 +34,7 @@ public class XMLParserService {
         return mapearNotaFiscal(root);
     }
 
-    private NotaFiscal mapearNotaFiscal(Element element) {
+    private static NotaFiscal mapearNotaFiscal(Element element) {
         NotaFiscal notaFiscal = new NotaFiscal();
         notaFiscal.setNumero(element.getAttribute("numero"));
         notaFiscal.setCnpjEmissor(element.getAttribute("cnpjEmissor"));
@@ -52,17 +52,16 @@ public class XMLParserService {
         notaFiscal.setDescricao(element.getAttribute("descricao"));
         notaFiscal.setClienteUuid(UUID.fromString(element.getAttribute("clienteUuid")));
         notaFiscal.setStatus(StatusNotaFiscal.valueOf(element.getAttribute("status")));
-        notaFiscal.setFormaPagamento(FormaPagamento.valueOf(element.getAttribute("formaPagamento")));
         notaFiscal.setObservacao(element.getAttribute("observacao"));
 
-        NodeList itensNodeList = element.getElementsByTagName("item");
-        List<UUID> itensUuids = new ArrayList<>();
-        for (int i = 0; i < itensNodeList.getLength(); i++) {
-            Element itemElement = (Element) itensNodeList.item(i);
-            UUID itemUuid = UUID.fromString(itemElement.getAttribute("uuid"));
-            itensUuids.add(itemUuid);
-        }
-        notaFiscal.setItensUuids(itensUuids);
+//        NodeList itensNodeList = element.getElementsByTagName("item");
+//        List<UUID> itensUuids = new ArrayList<>();
+//        for (int i = 0; i < itensNodeList.getLength(); i++) {
+//            Element itemElement = (Element) itensNodeList.item(i);
+//            UUID itemUuid = UUID.fromString(itemElement.getAttribute("uuid"));
+//            itensUuids.add(itemUuid);
+//        }
+//        notaFiscal.setItensUuids(itensUuids);
         return notaFiscal;
     }
 }

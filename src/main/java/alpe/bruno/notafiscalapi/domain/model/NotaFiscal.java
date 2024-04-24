@@ -1,9 +1,7 @@
 package alpe.bruno.notafiscalapi.domain.model;
 
 import alpe.bruno.notafiscalapi.domain.enums.StatusNotaFiscal;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +10,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -36,6 +33,8 @@ public class NotaFiscal extends ModeloGenerico{
     @Enumerated(EnumType.STRING)
     private StatusNotaFiscal status;
     private String observacao;
-    private List<UUID> itensUuids;
+    // private List<UUID> itensUuids;
+
+    @OneToOne(mappedBy = "notaFiscal", cascade = CascadeType.ALL)
     private Arquivo arquivo;
 }

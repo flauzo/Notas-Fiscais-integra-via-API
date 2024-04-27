@@ -4,15 +4,18 @@ import alpe.bruno.notafiscalapi.domain.enums.FormaPagamento;
 import alpe.bruno.notafiscalapi.domain.enums.StatusNotaFiscal;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import lombok.Builder;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID; /**
+import java.util.UUID;
+
+/**
  * @author brunoabneves
  */
-public record NotaFiscalDTO(
+@Builder
+public record NotaFiscalDTO (
         String numero,
         String cnpjEmissor,
         String nomeEmissor,
@@ -20,13 +23,11 @@ public record NotaFiscalDTO(
         LocalDateTime dataOperacao,
         BigDecimal valorTotal,
         String descricao,
-        UUID clienteUuid,
+        UUID clienteUuidExterno,
         @Enumerated(EnumType.STRING)
         StatusNotaFiscal status,
         @Enumerated(EnumType.STRING)
         FormaPagamento formaPagamento,
         String observacao,
-        List<UUID> itensUuids
-        )
-{
+        ArquivoDTO arquivoDTO){
 }

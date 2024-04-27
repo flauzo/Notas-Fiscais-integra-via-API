@@ -1,0 +1,37 @@
+{
+  "type":"record",
+  "name":"BoletoAvro",
+  "namespace":"alpe.bruno.avro.boleto",
+  "fields": [
+    {
+      "name":"uuid",
+      "type":"string",
+      "default": ""
+    },
+    {
+      "name":"linhaDigitavel",
+      "type":"string",
+      "default": ""
+    },
+    {
+      "name":"valor",
+      "type":"string",
+      "default": ""
+    },
+    {
+      "name":"numeroDocumento",
+      "type":"string",
+      "default": ""
+    },
+    {
+      "name":"beneficiario",
+      "type":"string",
+      "default": ""
+    },
+    {
+      "name":"dataVencimento",
+      "type":"string",
+      "default": ""
+    }
+  ]
+}

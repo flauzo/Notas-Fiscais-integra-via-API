@@ -1,11 +1,9 @@
 package alpe.bruno.notafiscalapi.domain.model;
 
+import alpe.bruno.notafiscalapi.domain.enums.FormaPagamento;
 import alpe.bruno.notafiscalapi.domain.enums.StatusNotaFiscal;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
@@ -20,21 +18,32 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class NotaFiscal extends ModeloGenerico{
 
     private String numero;
+    private String chaveAcesso;
     private String cnpjEmissor;
     private String nomeEmissor;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime dataOperacao;
+
     private BigDecimal valorTotal;
     private String descricao;
-    private UUID clienteUuid;
+
     @Enumerated(EnumType.STRING)
     private StatusNotaFiscal status;
+
     private String observacao;
+
+    private UUID uuidClienteExterno;
+
+    @Enumerated(EnumType.STRING)
+    FormaPagamento formaPagamento;
     // private List<UUID> itensUuids;
 
-    @OneToOne(mappedBy = "notaFiscal", cascade = CascadeType.ALL)
+    @OneToOne
+    @JoinColumn(name = "arquivo_id")
     private Arquivo arquivo;
 }

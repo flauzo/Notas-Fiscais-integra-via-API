@@ -3,6 +3,7 @@ package alpe.bruno.notafiscalapi.domain.model;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Setter
+@MappedSuperclass
 public class ModeloGenerico implements Serializable {
 
     @Serial

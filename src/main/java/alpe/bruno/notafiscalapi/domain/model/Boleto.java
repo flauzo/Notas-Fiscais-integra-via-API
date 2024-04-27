@@ -1,12 +1,10 @@
 package alpe.bruno.notafiscalapi.domain.model;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.OneToOne;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
@@ -21,18 +19,22 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Boleto extends ModeloGenerico {
 
-    private String codigoBarras;
+    private String linhaDigitavel;
     private BigDecimal valor;
-    private Long numeroDocumento;
+    private String numeroDocumento;
     private String beneficiario;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime dataVencimento;
 
+    @OneToOne
+    @JoinColumn(name = "arquivo_id")
     private Arquivo arquivo;
 
-    @OneToMany(mappedBy = "boleto", cascade = CascadeType.ALL)
+    @OneToMany
+    @JoinColumn(name = "boleto_id")
     private List<NotaFiscal> notasFiscais;
 }

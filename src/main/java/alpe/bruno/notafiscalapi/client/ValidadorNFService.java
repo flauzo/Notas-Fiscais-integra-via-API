@@ -1,6 +1,5 @@
 package alpe.bruno.notafiscalapi.client;
 
-import alpe.bruno.notafiscalapi.client.ValidadorNFClient;
 import alpe.bruno.notafiscalapi.shared.exception.ArquivoException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,8 +15,7 @@ public class ValidadorNFService {
 
     public void validarNotaFiscalPorChaveDeAcesso(String chaveAcesso) {
         var notaFiscalValida = client.validarNotaFiscal(chaveAcesso).getBody();
-        assert notaFiscalValida != null;
-        if(!notaFiscalValida) {
+        if(notaFiscalValida == null || !notaFiscalValida.contains("Nota fiscal validada com sucesso!")) {
             throw new ArquivoException("Nota fiscal inválida ou não existe.");
         }
     }

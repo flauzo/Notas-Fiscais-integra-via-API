@@ -63,7 +63,7 @@ public class NotaFiscalServiceImpl implements NotaFiscalService {
 
             return mapper.toDto(notaSalva);
         }catch (Exception e) {
-            logger.info("Erro durante a análise do conteúdo dos arquivos." + e.getMessage());
+            logger.info("Erro durante a análise do conteúdo dos arquivos. " + e);
             throw new RuntimeException("Erro durante a análise do conteúdo dos arquivos.", e);
         }
     }

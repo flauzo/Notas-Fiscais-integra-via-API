@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface ValidadorNFClient {
 
     @RequestMapping("/validar/{chaveAcesso}")
-    ResponseEntity<Boolean> validarNotaFiscal(@PathVariable("chaveAcesso") String chaveAcesso);
+    ResponseEntity<String> validarNotaFiscal(@PathVariable("chaveAcesso") String chaveAcesso);
 }

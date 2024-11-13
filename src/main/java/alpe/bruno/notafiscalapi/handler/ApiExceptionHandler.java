@@ -1,6 +1,6 @@
-package alpe.bruno.notafiscalapi.handler;
+package flauzo.cruz.notafiscalapi.handler;
 
-import alpe.bruno.notafiscalapi.service.message.MessageSourceService;
+import flauzo.cruz.notafiscalapi.service.message.MessageSourceService;
 import feign.FeignException;
 import feign.RetryableException;
 import feign.codec.DecodeException;
@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import static alpe.bruno.notafiscalapi.shared.message.MessageSourceKeys.*;
+import static flauzo.cruz.notafiscalapi.shared.message.MessageSourceKeys.*;
 
 @RestControllerAdvice
 public class ApiExceptionHandler {
@@ -42,7 +42,7 @@ public class ApiExceptionHandler {
     @Autowired
     private MessageSourceService messageService;
 
-    //Tratando as validações do BeanValidator
+    // Tratando as validações do BeanValidator.
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler({ MethodArgumentNotValidException.class })
     public List<Erro> onMethodArgumentNotValidException(HttpServletRequest req,
@@ -51,7 +51,7 @@ public class ApiExceptionHandler {
         return criarErrosValidation(bindingResult);
     }
 
-    //Exceções que precisam de uma mensagem padrão
+    // Exceções que precisam de uma mensagem padrão.
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(IllegalArgumentException.class)
     public List<Erro> onIllegalArgumentException(HttpServletRequest req, IllegalArgumentException e) {
@@ -81,8 +81,6 @@ public class ApiExceptionHandler {
         return errors;
     }
 
-
-
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(InvalidDataAccessApiUsageException.class)
     public List<Erro> onDataAccessApiUsageException(HttpServletRequest req, InvalidDataAccessApiUsageException e) {
@@ -105,13 +103,14 @@ public class ApiExceptionHandler {
         return errors;
     }
 
-    //Exceções do FeingException
+    // Exceções do FeingException.
     @ExceptionHandler({ FeignException.ServiceUnavailable.class })
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public List<Erro> onFeignExceptionServiceUnavailable(HttpServletRequest req, FeignException e) {
         List<Erro> errors = criarErrosException(e, SERVICE_UNAVAILABLE);
         return errors;
     }
+
     @ExceptionHandler({ DecodeException.class })
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public List<Erro> onDecodeException(HttpServletRequest req, DecodeException e) {
@@ -131,7 +130,7 @@ public class ApiExceptionHandler {
     public List<Erro> onFeignExceptionBadRequest(HttpServletRequest req, RetryableException e) {
         List<Erro> errors = new ArrayList<Erro>();
         String mensagemDesenvolvedor = e.getLocalizedMessage();
-        errors.add(new Erro(mensagemDesenvolvedor, "Erro de conexão! Tente novamente mais tarde"));
+        errors.add(new Erro(mensagemDesenvolvedor, "Erro de conexão! Tente novamente mais tarde."));
         return errors;
     }
 
@@ -149,15 +148,13 @@ public class ApiExceptionHandler {
         return errors;
     }
 
-    //Exceções com mensagens padrões
-
+    // Exceções com mensagens padrões.
     @ExceptionHandler({ MethodArgumentTypeMismatchException.class })
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public List<Erro> onMethodArgumentTypeMismatchException(HttpServletRequest req,
                                                             MethodArgumentTypeMismatchException e) {
 
         List<Erro> errors = criarErrosException(e);
-
         return errors;
     }
 
@@ -172,14 +169,12 @@ public class ApiExceptionHandler {
         }
     }
 
-
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler({ EntityNotFoundException.class })
     public List<Erro> onEntityNotFoundException(HttpServletRequest req, EntityNotFoundException e) {
         List<Erro> errors = criarErrosException(e);
         return errors;
     }
-
 
     @ExceptionHandler({ ConstraintViolationException.class })
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -212,10 +207,12 @@ public class ApiExceptionHandler {
         }else {
             mensagemDesenvolvedor = message;
         }
+
         if (mensagem == null) {
             mensagemDesenvolvedor = ""; //cause.fillInStackTrace().toString();
             mensagem = message;
         }
+
         if (mensagem.startsWith("{key.")) {
             mensagem = messageService.getMessage(mensagem);
         }
@@ -233,13 +230,16 @@ public class ApiExceptionHandler {
         }else {
             mensagemDesenvolvedor = message;
         }
+
         if (mensagem == null) {
             mensagemDesenvolvedor = cause.fillInStackTrace().toString();
             mensagem = message;
         }
+
         if (mensagem.startsWith("{key.")) {
             mensagem = messageService.getMessage(mensagem);
         }
+
         errors.add(new Erro(mensagemDesenvolvedor, mensagem));
         return errors;
     }
@@ -257,7 +257,6 @@ public class ApiExceptionHandler {
         }
         return rootCause;
     }
-
 
     @Getter
     @Setter

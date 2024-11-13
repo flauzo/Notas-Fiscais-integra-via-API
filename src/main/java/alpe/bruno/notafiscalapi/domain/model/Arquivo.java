@@ -1,6 +1,6 @@
-package alpe.bruno.notafiscalapi.domain.model;
+package flauzo.cruz.notafiscalapi.domain.model;
 
-import alpe.bruno.notafiscalapi.domain.enums.TipoDocumento;
+import flauzo.cruz.notafiscalapi.domain.enums.TipoDocumento;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Entity
 @Getter

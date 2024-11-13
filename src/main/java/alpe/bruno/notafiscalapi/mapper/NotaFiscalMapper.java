@@ -1,11 +1,11 @@
-package alpe.bruno.notafiscalapi.mapper;
+package flauzo.cruz.notafiscalapi.mapper;
 
-import alpe.bruno.notafiscalapi.domain.dto.NotaFiscalDTO;
-import alpe.bruno.notafiscalapi.domain.model.NotaFiscal;
+import flauzo.cruz.notafiscalapi.domain.dto.NotaFiscalDTO;
+import flauzo.cruz.notafiscalapi.domain.model.NotaFiscal;
 import org.mapstruct.Mapper;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Mapper(componentModel = "spring")
 public interface NotaFiscalMapper extends EntityMapper<NotaFiscalDTO, NotaFiscal>{

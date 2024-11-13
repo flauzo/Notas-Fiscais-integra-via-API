@@ -1,7 +1,7 @@
-package alpe.bruno.notafiscalapi.shared.exception;
+package flauzo.cruz.notafiscalapi.shared.exception;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 public class ArquivoException extends RuntimeException{
     private Integer status;

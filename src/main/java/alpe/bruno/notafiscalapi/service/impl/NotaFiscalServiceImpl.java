@@ -1,17 +1,17 @@
-package alpe.bruno.notafiscalapi.service.impl;
+package flauzo.cruz.notafiscalapi.service.impl;
 
-import alpe.bruno.notafiscalapi.client.ValidadorNFService;
-import alpe.bruno.notafiscalapi.domain.dto.NotaFiscalDTO;
-import alpe.bruno.notafiscalapi.domain.enums.FormaPagamento;
-import alpe.bruno.notafiscalapi.domain.enums.StatusNotaFiscal;
-import alpe.bruno.notafiscalapi.domain.enums.TipoDocumento;
-import alpe.bruno.notafiscalapi.kafka.ProducerKafka;
-import alpe.bruno.notafiscalapi.mapper.BoletoMapper;
-import alpe.bruno.notafiscalapi.mapper.NotaFiscalMapper;
-import alpe.bruno.notafiscalapi.repository.NotaFiscalRepository;
-import alpe.bruno.notafiscalapi.service.ArquivoService;
-import alpe.bruno.notafiscalapi.service.NotaFiscalService;
-import alpe.bruno.notafiscalapi.shared.utils.XMLParserService;
+import flauzo.cruz.notafiscalapi.client.ValidadorNFService;
+import flauzo.cruz.notafiscalapi.domain.dto.NotaFiscalDTO;
+import flauzo.cruz.notafiscalapi.domain.enums.FormaPagamento;
+import flauzo.cruz.notafiscalapi.domain.enums.StatusNotaFiscal;
+import flauzo.cruz.notafiscalapi.domain.enums.TipoDocumento;
+import flauzo.cruz.notafiscalapi.kafka.ProducerKafka;
+import flauzo.cruz.notafiscalapi.mapper.BoletoMapper;
+import flauzo.cruz.notafiscalapi.mapper.NotaFiscalMapper;
+import flauzo.cruz.notafiscalapi.repository.NotaFiscalRepository;
+import flauzo.cruz.notafiscalapi.service.ArquivoService;
+import flauzo.cruz.notafiscalapi.service.NotaFiscalService;
+import flauzo.cruz.notafiscalapi.shared.utils.XMLParserService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Service
 @RequiredArgsConstructor
@@ -53,7 +53,7 @@ public class NotaFiscalServiceImpl implements NotaFiscalService {
             notaFiscal.setArquivo(arquivo);
             var notaSalva = repository.saveAndFlush(notaFiscal);
 
-            //Envia os boletos para um tópico que será consumido pelo serviço de cobrança
+            // Envia os boletos para um tópico que será consumido pelo serviço de cobrança.
             if(formaPagamento.equals(FormaPagamento.BOLETO) && !pdfsBoletos.isEmpty()) {
                 pdfsBoletos.forEach(pdf -> {
                     var boleto = boletoService.converterPDFParaBoleto(pdf);
@@ -63,8 +63,8 @@ public class NotaFiscalServiceImpl implements NotaFiscalService {
 
             return mapper.toDto(notaSalva);
         }catch (Exception e) {
-            logger.info("Erro durante a análise do conteúdo dos arquivos. " + e);
-            throw new RuntimeException("Erro durante a análise do conteúdo dos arquivos.", e);
+            logger.info("Erro durante a Análise do conteúdo dos arquivos. " + e);
+            throw new RuntimeException("Erro durante a Análise do conteúdo dos arquivos.", e);
         }
     }
 }

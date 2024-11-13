@@ -1,4 +1,4 @@
-package alpe.bruno.notafiscalapi.client;
+package flauzo.cruz.notafiscalapi.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;

@@ -1,8 +1,8 @@
-package alpe.bruno.notafiscalapi.controller;
+package flauzo.cruz.notafiscalapi.controller;
 
-import alpe.bruno.notafiscalapi.domain.dto.NotaFiscalDTO;
-import alpe.bruno.notafiscalapi.domain.enums.FormaPagamento;
-import alpe.bruno.notafiscalapi.service.NotaFiscalService;
+import flauzo.cruz.notafiscalapi.domain.dto.NotaFiscalDTO;
+import flauzo.cruz.notafiscalapi.domain.enums.FormaPagamento;
+import flauzo.cruz.notafiscalapi.service.NotaFiscalService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @RestController
 @RequestMapping("/notas-fiscais")
@@ -24,7 +24,7 @@ public class NotaFiscalController {
 
     private NotaFiscalService service;
 
-    @Operation(summary = "Receber arquivos", description = "recebe nota fiscal e pdfs do ERP de clientes.")
+    @Operation(summary = "Receber arquivos", description = "recebe Nota Fiscal e PDFs do ERP de clientes.")
     @PostMapping(value = "/receber-arquivos/{uuidCliente}", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
     public ResponseEntity<NotaFiscalDTO> receberArquivos(@RequestPart("xmlNotaFiscal") MultipartFile xmlNotaFiscal,
                                                         @RequestPart("pdfs") List<MultipartFile> pdfs,

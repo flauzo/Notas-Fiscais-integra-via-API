@@ -1,11 +1,11 @@
-package alpe.bruno.notafiscalapi.service;
+package flauzo.cruz.notafiscalapi.service;
 
-import alpe.bruno.notafiscalapi.domain.enums.TipoDocumento;
-import alpe.bruno.notafiscalapi.domain.model.Arquivo;
+import flauzo.cruz.notafiscalapi.domain.enums.TipoDocumento;
+import flauzo.cruz.notafiscalapi.domain.model.Arquivo;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 public interface ArquivoService {
 

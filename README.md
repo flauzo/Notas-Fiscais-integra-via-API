@@ -1,6 +1,6 @@
 # 📝 Sistema de Notas Fiscais
 
-Sistema de notas fiscais que integra com o ERP do cliente para que seja possível receber as notas fiscais e seus respectivos dados de pagamento.
+Sistema de Notas Fiscais que integra com o ERP (Enterprise Resource Planning) de cliente para que seja possível receber as notas fiscais e seus respectivos dados de pagamento.
 
 ## ⚙️ Principais tecnologias
 - **Java 17**

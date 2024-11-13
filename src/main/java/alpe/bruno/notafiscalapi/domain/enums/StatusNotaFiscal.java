@@ -1,10 +1,10 @@
-package alpe.bruno.notafiscalapi.domain.enums;
+package flauzo.cruz.notafiscalapi.domain.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Getter
 @AllArgsConstructor

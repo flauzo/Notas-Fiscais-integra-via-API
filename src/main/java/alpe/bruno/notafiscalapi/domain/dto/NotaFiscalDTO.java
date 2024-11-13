@@ -1,7 +1,7 @@
-package alpe.bruno.notafiscalapi.domain.dto;
+package flauzo.cruz.notafiscalapi.domain.dto;
 
-import alpe.bruno.notafiscalapi.domain.enums.FormaPagamento;
-import alpe.bruno.notafiscalapi.domain.enums.StatusNotaFiscal;
+import flauzo.cruz.notafiscalapi.domain.enums.FormaPagamento;
+import flauzo.cruz.notafiscalapi.domain.enums.StatusNotaFiscal;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.Builder;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Builder
 public record NotaFiscalDTO (

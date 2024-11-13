@@ -1,4 +1,4 @@
-package alpe.bruno.notafiscalapi.service.message;
+package flauzo.cruz.notafiscalapi.service.message;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;

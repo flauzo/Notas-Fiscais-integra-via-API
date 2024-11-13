@@ -1,7 +1,8 @@
-package alpe.bruno.notafiscalapi;
+package flauzo.cruz.notafiscalapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
 
 @SpringBootTest
 class NotaFiscalApiApplicationTests {
@@ -9,5 +10,4 @@ class NotaFiscalApiApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

@@ -1,4 +1,4 @@
-package alpe.bruno.notafiscalapi.shared.exception;
+package flauzo.cruz.notafiscalapi.shared.exception;
 
 public class RegraDeNegocioException extends RuntimeException{
 

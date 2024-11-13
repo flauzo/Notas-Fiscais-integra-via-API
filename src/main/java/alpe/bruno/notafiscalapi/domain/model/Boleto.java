@@ -1,4 +1,4 @@
-package alpe.bruno.notafiscalapi.domain.model;
+package flauzo.cruz.notafiscalapi.domain.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Entity
 @Getter

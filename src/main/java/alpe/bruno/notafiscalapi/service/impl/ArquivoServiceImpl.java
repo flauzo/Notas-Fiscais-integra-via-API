@@ -1,10 +1,10 @@
-package alpe.bruno.notafiscalapi.service.impl;
+package flauzo.cruz.notafiscalapi.service.impl;
 
-import alpe.bruno.notafiscalapi.domain.enums.TipoDocumento;
-import alpe.bruno.notafiscalapi.domain.model.Arquivo;
-import alpe.bruno.notafiscalapi.repository.ArquivoRepository;
-import alpe.bruno.notafiscalapi.service.ArquivoService;
-import alpe.bruno.notafiscalapi.shared.exception.ArquivoException;
+import flauzo.cruz.notafiscalapi.domain.enums.TipoDocumento;
+import flauzo.cruz.notafiscalapi.domain.model.Arquivo;
+import flauzo.cruz.notafiscalapi.repository.ArquivoRepository;
+import flauzo.cruz.notafiscalapi.service.ArquivoService;
+import flauzo.cruz.notafiscalapi.shared.exception.ArquivoException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 
 @Service
@@ -29,7 +29,7 @@ public class ArquivoServiceImpl implements ArquivoService {
             Arquivo arquivo = new Arquivo(file.getOriginalFilename(), tipoDocumento, file.getBytes());
             return repository.save(arquivo);
         } catch (IOException e) {
-            throw new ArquivoException("Erro ao cadastrar arquivo"+ e.getMessage());
+            throw new ArquivoException("Erro ao cadastrar arquivo."+ e.getMessage());
         }
     }
 }

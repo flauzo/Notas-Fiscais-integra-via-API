@@ -1,4 +1,4 @@
-package alpe.bruno.notafiscalapi.domain.model;
+package flauzo.cruz.notafiscalapi.domain.model;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +17,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @NoArgsConstructor
 @AllArgsConstructor

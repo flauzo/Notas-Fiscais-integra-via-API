@@ -1,4 +1,4 @@
-package alpe.bruno.notafiscalapi.domain.dto;
+package flauzo.cruz.notafiscalapi.domain.dto;
 
 import lombok.Builder;
 
@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Builder
 public record BoletoDTO(

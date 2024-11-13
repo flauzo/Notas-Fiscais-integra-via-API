@@ -1,7 +1,7 @@
-package alpe.bruno.notafiscalapi.kafka;
+package flauzo.cruz.notafiscalapi.kafka;
 
-import alpe.bruno.avro.boleto.BoletoAvro;
-import alpe.bruno.notafiscalapi.domain.dto.BoletoDTO;
+import flauzo.cruz.avro.boleto.BoletoAvro;
+import flauzo.cruz.notafiscalapi.domain.dto.BoletoDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

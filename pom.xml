@@ -8,11 +8,13 @@
 		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>alpe.bruno</groupId>
-	<artifactId>nota-fiscal-api</artifactId>
+
+	<groupId>flauzo.cruz</groupId>
+	<artifactId>nota-fiscal-integra-via-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>nota-fiscal-api</name>
-	<description>Sistema responsável por  receber notas fiscais e seus dados de pagamento, a partir de integração com ERP de cliente.</description>
+	<name>nota-fiscal-integra-via-api</name>
+	<description>Sistema responsável por receber Notas Fiscais e seus dados de Pagamento, a partir de integração com ERP (Enterprise Resource Planning) de cliente.</description>
+
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.1</spring-cloud.version>
@@ -20,6 +22,7 @@
 		<avro.version>1.11.0</avro.version>
 		<confluent.version>7.0.1</confluent.version>
 	</properties>
+
 	<repositories>
 		<repository>
 			<id>confluent</id>
@@ -27,20 +30,24 @@
 			<releases>
 				<enabled>true</enabled>
 			</releases>
+
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
 	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -51,11 +58,13 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -96,11 +105,13 @@
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.0.4</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.avro</groupId>
 			<artifactId>avro</artifactId>
 			<version>1.11.3</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.avro</groupId>
 			<artifactId>avro-maven-plugin</artifactId>
@@ -113,6 +124,7 @@
 			<version>2.0.31</version>
 		</dependency>
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -139,6 +151,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -165,6 +178,7 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.avro</groupId>
 				<artifactId>avro-maven-plugin</artifactId>

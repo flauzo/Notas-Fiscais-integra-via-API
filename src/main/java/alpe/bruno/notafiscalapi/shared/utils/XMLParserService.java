@@ -1,6 +1,6 @@
-package alpe.bruno.notafiscalapi.shared.utils;
+package flauzo.cruz.notafiscalapi.shared.utils;
 
-import alpe.bruno.notafiscalapi.domain.model.NotaFiscal;
+import flauzo.cruz.notafiscalapi.domain.model.NotaFiscal;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.w3c.dom.Document;
@@ -18,7 +18,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Service
 public class XMLParserService {
@@ -36,7 +36,7 @@ public class XMLParserService {
 
             return buildNotaFiscal(file, rootElement);
         } catch (Exception e) {
-            throw  new RuntimeException("Erro ao processar arquivo", e);
+            throw  new RuntimeException("Erro ao processar arquivo.", e);
         }
     }
 

@@ -1,7 +1,7 @@
 {
   "type":"record",
   "name":"BoletoAvro",
-  "namespace":"alpe.bruno.avro.boleto",
+  "namespace":"flauzo.cruz.avro.boleto",
   "fields": [
     {
       "name":"uuid",

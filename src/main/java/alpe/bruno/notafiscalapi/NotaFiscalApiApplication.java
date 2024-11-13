@@ -1,4 +1,4 @@
-package alpe.bruno.notafiscalapi;
+package flauzo.cruz.notafiscalapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,5 +12,4 @@ public class NotaFiscalApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NotaFiscalApiApplication.class, args);
 	}
-
 }

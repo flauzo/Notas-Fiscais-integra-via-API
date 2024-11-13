@@ -1,14 +1,14 @@
-package alpe.bruno.notafiscalapi.client;
+package flauzo.cruz.notafiscalapi.client;
 
-import alpe.bruno.notafiscalapi.client.ClienteClient;
-import alpe.bruno.notafiscalapi.client.response.ArquivosClienteResponse;
+import flauzo.cruz.notafiscalapi.client.ClienteClient;
+import flauzo.cruz.notafiscalapi.client.response.ArquivosClienteResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Service
 @RequiredArgsConstructor

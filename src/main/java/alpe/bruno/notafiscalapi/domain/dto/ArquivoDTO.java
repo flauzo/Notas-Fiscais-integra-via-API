@@ -1,10 +1,11 @@
-package alpe.bruno.notafiscalapi.domain.dto;
+package flauzo.cruz.notafiscalapi.domain.dto;
 
-import alpe.bruno.notafiscalapi.domain.enums.TipoDocumento;
+import flauzo.cruz.notafiscalapi.domain.enums.TipoDocumento;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.Lob; /**
- * @author brunoabneves
+import jakarta.persistence.Lob; 
+/**
+ * @author flauzo
  */
 public record ArquivoDTO(
         String nomeDocumento,

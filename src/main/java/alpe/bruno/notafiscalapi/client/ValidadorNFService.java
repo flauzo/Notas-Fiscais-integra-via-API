@@ -1,11 +1,11 @@
-package alpe.bruno.notafiscalapi.client;
+package flauzo.cruz.notafiscalapi.client;
 
-import alpe.bruno.notafiscalapi.shared.exception.ArquivoException;
+import flauzo.cruz.notafiscalapi.shared.exception.ArquivoException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Service
 @RequiredArgsConstructor
@@ -15,7 +15,7 @@ public class ValidadorNFService {
 
     public void validarNotaFiscalPorChaveDeAcesso(String chaveAcesso) {
         var notaFiscalValida = client.validarNotaFiscal(chaveAcesso).getBody();
-        if(notaFiscalValida == null || !notaFiscalValida.contains("Nota fiscal validada com sucesso!")) {
+        if(notaFiscalValida == null || !notaFiscalValida.contains("Nota fiscal validada com Sucesso!")) {
             throw new ArquivoException("Nota fiscal inválida ou não existe.");
         }
     }

@@ -1,6 +1,6 @@
-package alpe.bruno.notafiscalapi.config;
+package flauzo.cruz.notafiscalapi.config;
 
-import alpe.bruno.avro.boleto.BoletoAvro;
+import flauzo.cruz.avro.boleto.BoletoAvro;
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.kafka.clients.admin.NewTopic;

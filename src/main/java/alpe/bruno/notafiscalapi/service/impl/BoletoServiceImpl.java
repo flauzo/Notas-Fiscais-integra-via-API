@@ -1,8 +1,8 @@
-package alpe.bruno.notafiscalapi.service.impl;
+package flauzo.cruz.notafiscalapi.service.impl;
 
-import alpe.bruno.notafiscalapi.domain.enums.TipoDocumento;
-import alpe.bruno.notafiscalapi.domain.model.Arquivo;
-import alpe.bruno.notafiscalapi.domain.model.Boleto;
+import flauzo.cruz.notafiscalapi.domain.enums.TipoDocumento;
+import flauzo.cruz.notafiscalapi.domain.model.Arquivo;
+import flauzo.cruz.notafiscalapi.domain.model.Boleto;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Service
 public class BoletoServiceImpl implements BoletoService{
@@ -41,12 +41,12 @@ public class BoletoServiceImpl implements BoletoService{
             document.close();
             return boleto;
         } catch (IOException e) {
-            throw new RuntimeException("Erro na conversão de arquivo", e);
+            throw new RuntimeException("Erro na Conversão de arquivo.", e);
         }
     }
 
     private String extrairLinhaDigitavel(String texto) {
-        // Exemplo de expressão regular para extrair a linha digitável de um boleto
+        // Exemplo de expressão regular para extrair a linha digitável de um boleto.
         Pattern pattern = Pattern.compile("\\d{5}\\.\\d{5} \\d{5}\\.\\d{6} \\d{5}\\.\\d{6} \\d \\d{14}");
         Matcher matcher = pattern.matcher(texto);
         if (matcher.find()) {
@@ -57,7 +57,7 @@ public class BoletoServiceImpl implements BoletoService{
     }
 
     private BigDecimal extrairValor(String texto) {
-        // Exemplo de expressão regular para extrair um valor monetário
+        // Exemplo de expressão regular para extrair um valor monetário.
         Pattern pattern = Pattern.compile("Valor do Documento\\s+([\\d\\.,]+)");
         Matcher matcher = pattern.matcher(texto);
         if (matcher.find()) {
@@ -69,7 +69,7 @@ public class BoletoServiceImpl implements BoletoService{
     }
 
     private String extrairNumeroDocumento(String texto) {
-        // Exemplo de expressão regular para extrair um número de documento de 10 dígitos
+        // Exemplo de expressão regular para extrair um número de documento de 10 dígitos.
         Pattern pattern = Pattern.compile("Número do Documento\\s+(\\d+)");
         Matcher matcher = pattern.matcher(texto);
         if (matcher.find()) {
@@ -80,7 +80,7 @@ public class BoletoServiceImpl implements BoletoService{
     }
 
     private String extrairBeneficiario(String texto) {
-        // Exemplo de expressão regular para extrair o beneficiário do boleto
+        // Exemplo de expressão regular para extrair o beneficiário do boleto.
         Pattern pattern = Pattern.compile("Cedente\\s+([^\\n]+)");
         Matcher matcher = pattern.matcher(texto);
         if (matcher.find()) {
@@ -91,7 +91,7 @@ public class BoletoServiceImpl implements BoletoService{
     }
 
     private LocalDateTime extrairDataVencimento(String texto) {
-        // Exemplo de expressão regular para extrair a data de vencimento do boleto
+        // Exemplo de expressão regular para extrair a data de vencimento do boleto.
         Pattern pattern = Pattern.compile("Vencimento: (\\d{2}/\\d{2}/\\d{4})");
         Matcher matcher = pattern.matcher(texto);
         if (matcher.find()) {

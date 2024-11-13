@@ -1,10 +1,10 @@
-package alpe.bruno.notafiscalapi.service.impl;
+package flauzo.cruz.notafiscalapi.service.impl;
 
-import alpe.bruno.notafiscalapi.domain.model.Boleto;
+import flauzo.cruz.notafiscalapi.domain.model.Boleto;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 public interface BoletoService {
 

@@ -1,7 +1,7 @@
-package alpe.bruno.notafiscalapi.domain.model;
+package flauzo.cruz.notafiscalapi.domain.model;
 
-import alpe.bruno.notafiscalapi.domain.enums.FormaPagamento;
-import alpe.bruno.notafiscalapi.domain.enums.StatusNotaFiscal;
+import flauzo.cruz.notafiscalapi.domain.enums.FormaPagamento;
+import flauzo.cruz.notafiscalapi.domain.enums.StatusNotaFiscal;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
- * @author brunoabneves
+ * @author flauzo
  */
 @Entity
 @Getter

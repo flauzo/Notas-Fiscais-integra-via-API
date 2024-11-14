@@ -1,6 +1,6 @@
 # 📝 Sistema de Notas Fiscais
 
-Sistema de Notas Fiscais que integra com o ERP (Enterprise Resource Planning) de cliente para que seja possível receber as notas fiscais e seus respectivos dados de pagamento.
+Sistema de **Notas Fiscais** que integra com o ERP (Enterprise Resource Planning) de cliente para que seja possível receber as notas fiscais e seus respectivos dados de pagamento.
 
 ## ⚙️ Principais tecnologias
 - **Java 17**
@@ -14,7 +14,9 @@ Sistema de Notas Fiscais que integra com o ERP (Enterprise Resource Planning) de
 - **Conduktor**
 
 ## 👨🏻‍🏫 Instruções de execução
-Para executar a aplicação, será preciso rodar o Apache Kafka, juntamente com o Schema Registry. No arquivo docker-compose já se encontram todas as dependências necessárias para o seu funcionamento.
+Para executar a aplicação, será preciso rodar o Apache Kafka, juntamente com o Schema Registry. 
+No arquivo docker-compose já se encontram todas as dependências necessárias para o seu funcionamento.
+
 Na pasta ***"nota-fiscal-api/docker"*** execute o seguinte comando:
 ```
 docker-compose up -d 
@@ -35,17 +37,11 @@ Para isso, é necessário configurar o Cluster do Conduktor
 4. Após criado o cluster, execute ***docker-compose*** para poder usar o Conduktor.
 
 ## Variáveis de Ambiente
-
 Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente
 
 `DATABASE_URL`
-
-`DATABASE_PASSWORD`
-
 `DATABASE_USERNAME`
-
+`DATABASE_PASSWORD`
 `NF_VALIDATOR_API`
-
 `SERVER_PORT`
-
 

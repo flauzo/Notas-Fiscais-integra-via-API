@@ -1,6 +1,6 @@
 # 📝 Sistema de Notas Fiscais
 
-Sistema de **Notas Fiscais** que integra com o ERP (Enterprise Resource Planning) de cliente para que seja possível receber as notas fiscais e seus respectivos dados de pagamento.
+Sistema de **Notas Fiscais** que integra com o ERP (_Enterprise Resource Planning_) de cliente para que seja possível receber as _notas fiscais_ e seus respectivos _dados de pagamento_.
 
 ## ⚙️ Principais tecnologias
 - **Java 17**
@@ -40,8 +40,12 @@ Para isso, é necessário configurar o Cluster do Conduktor
 Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente
 
 `DATABASE_URL`
+
 `DATABASE_USERNAME`
+
 `DATABASE_PASSWORD`
+
 `NF_VALIDATOR_API`
+
 `SERVER_PORT`
 

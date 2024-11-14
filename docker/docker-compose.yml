@@ -27,7 +27,6 @@ services:
       KAFKA_NUM_PARTITIONS: 3
       CONFLUENT_SUPPORT_METRICS_ENABLE: 0
 
-
   schemaregistry:
     image: confluentinc/cp-schema-registry:5.1.2
     restart: always
